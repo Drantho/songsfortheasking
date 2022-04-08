@@ -15,6 +15,13 @@ const routes = [
     ]
   },
   {
+    path: '/bandlist/',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
+      { path: '', component: () => import('pages/BandList.vue') }
+    ]
+  },
+  {
     path: '/band/:bandId',
     component: () => import('layouts/MainLayout.vue'),
     children: [
@@ -35,7 +42,6 @@ const routes = [
       { path: '', component: () => import('pages/Song.vue') }
     ]
   },
-
   // Always leave this as last one,
   // but you can also remove it
   {
